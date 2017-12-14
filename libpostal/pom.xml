@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>javacpp-presets</artifactId>
+        <groupId>org.bytedeco</groupId>
+        <version>1.3</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.bytedeco.javacpp-presets</groupId>
+    <artifactId>libpostal</artifactId>
+    <version>1.0-${project.parent.version}</version>
+    <name>JavaCPP Presets for libpostal</name>
+
+    <properties>
+        <javacpp.platform.oldcompiler>${javacpp.platform.compiler}</javacpp.platform.oldcompiler>
+    </properties>
+
+
+</project>

@@ -41,6 +41,7 @@
     <module>ffmpeg</module>
     <module>flycapture</module>
     <module>libdc1394</module>
+    <module>libpostal</module>
     <module>libfreenect</module>
     <module>librealsense</module>
     <module>videoinput</module>
