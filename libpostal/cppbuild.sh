@@ -25,11 +25,11 @@ case $PLATFORM in
     echo "Starting windows-x86_64 build"
     cp -rf windows/* ./
     echo $PWD
-    ./bootstrap.sh
+    autoreconf -fi --warning=no-portability
     #./configure --datadir=/c
-    #./configure --disable-data-download
-    #make -j4
-    #make install
+    ./configure --disable-data-download
+    make -j4
+    make install
         ;;
     *)
         echo "Error: Platform \"$PLATFORM\" is not supported"
