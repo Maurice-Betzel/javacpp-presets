@@ -22,16 +22,21 @@
 
 package org.bytedeco.javacpp.presets;
 
+import org.bytedeco.javacpp.annotation.Platform;
 import org.bytedeco.javacpp.annotation.Properties;
+import org.bytedeco.javacpp.tools.Info;
 import org.bytedeco.javacpp.tools.InfoMap;
 import org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
  * @author Maurice Betzel
  */
-@Properties(target = "org.bytedeco.javacpp.libpostal")
+@Properties(target = "org.bytedeco.javacpp.libpostal", value = {
+        @Platform(include = "<libpostal.h>", link = {"libpostal@1"}),
+        @Platform(value = "windows", link = "libpostaldll", preload = {"libpostal-1"})})
 public class libpostal implements InfoMapper {
     public void map(InfoMap infoMap) {
-
+        infoMap.put(new Info("voidp", "voidpc", "voidpf").valueTypes("Pointer"))
+                .put(new Info("uInt", "uIntf").cast().valueTypes("int").pointerTypes("IntPointer"));
     }
 }
