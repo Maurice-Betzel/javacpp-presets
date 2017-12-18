@@ -19,6 +19,7 @@
     <module>../ffmpeg/platform</module>
     <module>../flycapture/platform</module>
     <module>../libdc1394/platform</module>
+    <module>../libpostal/platform</module>
     <module>../libfreenect/platform</module>
     <module>../librealsense/platform</module>
     <module>../videoinput/platform</module>
