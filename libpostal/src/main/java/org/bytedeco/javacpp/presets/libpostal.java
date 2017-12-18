@@ -33,11 +33,9 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  */
 @Properties(target = "org.bytedeco.javacpp.libpostal", value = {
         @Platform(include = "<libpostal.h>", link = {"libpostal@1"}),
-        @Platform(value = "windows", link = "libpostaldll", preload = {"libpostal-1"})})
+        @Platform(value = "windows", link = "libpostal" )})
 public class libpostal implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("LIBPOSTAL_EXPORT").cppTypes().annotations());
-        //infoMap.put(new Info("voidp", "voidpc", "voidpf").valueTypes("Pointer"));
-                //.put(new Info("uInt", "uIntf").cast().valueTypes("int").pointerTypes("IntPointer"));
     }
 }

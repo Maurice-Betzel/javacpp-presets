@@ -17,11 +17,12 @@ cd libpostal
 
 case $PLATFORM in
     windows-x86_64)
-    ECHO $PWD
-        unzip ../../../src/main/resources/libpostal.zip
+        unzip ../../../libpostal.zip
         mkdir -p ../bin
+        mkdir -p ../lib
         mkdir -p ../include
         cp *.dll ../bin
+        cp *.lib ../lib
         cp *.h ../include
         ;;
     *)
@@ -30,5 +31,3 @@ case $PLATFORM in
 esac
 
 cd ../..
-
-
