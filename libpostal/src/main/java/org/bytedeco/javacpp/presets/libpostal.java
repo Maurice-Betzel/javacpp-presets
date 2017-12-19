@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2017 Maurice Betzel
+ * Copyright (C) 2014-2017 Maurice Betzel, Samuel Audet
  *
  * Licensed either under the Apache License, Version 2.0, or (at your option)
  * under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import org.bytedeco.javacpp.tools.InfoMap;
 import org.bytedeco.javacpp.tools.InfoMapper;
 
 /**
- * @author Maurice Betzel
+ * @author Maurice Betzel, Samuel Audet
  */
 @Properties(target = "org.bytedeco.javacpp.libpostal", value = {
         @Platform(include = "<libpostal.h>", link = {"libpostal@1.0"}),

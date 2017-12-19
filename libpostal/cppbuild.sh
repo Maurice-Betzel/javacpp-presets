@@ -17,7 +17,7 @@ cd libpostal
 
 case $PLATFORM in
     windows-x86_64)
-        unzip ../../../libpostal.zip
+        unzip ../../../libpostal_binary.zip
         mkdir -p ../bin
         mkdir -p ../lib
         mkdir -p ../include
