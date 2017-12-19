@@ -33,7 +33,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  */
 @Properties(target = "org.bytedeco.javacpp.libpostal", value = {
         @Platform(include = "<libpostal.h>", link = {"libpostal@1.0"}),
-        @Platform(value = "windows", link = "libpostal" )})
+        @Platform(value = "windows", link = "libpostal")})
 public class libpostal implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("LIBPOSTAL_EXPORT").cppTypes().annotations());
