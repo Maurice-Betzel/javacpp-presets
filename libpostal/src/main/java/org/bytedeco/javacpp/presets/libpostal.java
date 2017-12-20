@@ -36,7 +36,6 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(value = "windows", link = "libpostal")})
 public class libpostal implements InfoMapper {
     public void map(InfoMap infoMap) {
-        infoMap.put(new Info("LIBPOSTAL_EXPORT").cppTypes().annotations())
-                .put(new Info("char").cast().valueTypes("byte").pointerTypes("BytePointer", "String"));
+        infoMap.put(new Info("LIBPOSTAL_EXPORT").cppTypes().annotations());
     }
 }

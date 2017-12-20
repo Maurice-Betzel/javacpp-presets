@@ -103,11 +103,13 @@ public static class libpostal_normalize_options_t extends Pointer {
 public static native @ByVal libpostal_normalize_options_t libpostal_get_default_options();
 
 public static native @Cast("char**") PointerPointer libpostal_expand_address(@Cast("char*") BytePointer input, @ByVal libpostal_normalize_options_t options, @Cast("size_t*") SizeTPointer n);
-public static native @Cast("char**") @ByPtrPtr String libpostal_expand_address(@Cast("char*") String input, @ByVal libpostal_normalize_options_t options, @Cast("size_t*") SizeTPointer n);
+public static native @Cast("char**") @ByPtrPtr ByteBuffer libpostal_expand_address(@Cast("char*") ByteBuffer input, @ByVal libpostal_normalize_options_t options, @Cast("size_t*") SizeTPointer n);
+public static native @Cast("char**") @ByPtrPtr byte[] libpostal_expand_address(@Cast("char*") byte[] input, @ByVal libpostal_normalize_options_t options, @Cast("size_t*") SizeTPointer n);
 
 public static native void libpostal_expansion_array_destroy(@Cast("char**") PointerPointer expansions, @Cast("size_t") long n);
 public static native void libpostal_expansion_array_destroy(@Cast("char**") @ByPtrPtr BytePointer expansions, @Cast("size_t") long n);
-public static native void libpostal_expansion_array_destroy(@Cast("char**") @ByPtrPtr String expansions, @Cast("size_t") long n);
+public static native void libpostal_expansion_array_destroy(@Cast("char**") @ByPtrPtr ByteBuffer expansions, @Cast("size_t") long n);
+public static native void libpostal_expansion_array_destroy(@Cast("char**") @ByPtrPtr byte[] expansions, @Cast("size_t") long n);
 
 /*
 Address parser
@@ -157,7 +159,8 @@ public static native void libpostal_address_parser_response_destroy(libpostal_ad
 public static native @ByVal libpostal_address_parser_options_t libpostal_get_address_parser_default_options();
 
 public static native libpostal_address_parser_response_t libpostal_parse_address(@Cast("char*") BytePointer address, @ByVal libpostal_address_parser_options_t options);
-public static native libpostal_address_parser_response_t libpostal_parse_address(@Cast("char*") String address, @ByVal libpostal_address_parser_options_t options);
+public static native libpostal_address_parser_response_t libpostal_parse_address(@Cast("char*") ByteBuffer address, @ByVal libpostal_address_parser_options_t options);
+public static native libpostal_address_parser_response_t libpostal_parse_address(@Cast("char*") byte[] address, @ByVal libpostal_address_parser_options_t options);
 
 public static native @Cast("bool") boolean libpostal_parser_print_features(@Cast("bool") boolean print_features);
 
@@ -165,17 +168,20 @@ public static native @Cast("bool") boolean libpostal_parser_print_features(@Cast
 
 public static native @Cast("bool") boolean libpostal_setup();
 public static native @Cast("bool") boolean libpostal_setup_datadir(@Cast("char*") BytePointer datadir);
-public static native @Cast("bool") boolean libpostal_setup_datadir(@Cast("char*") String datadir);
+public static native @Cast("bool") boolean libpostal_setup_datadir(@Cast("char*") ByteBuffer datadir);
+public static native @Cast("bool") boolean libpostal_setup_datadir(@Cast("char*") byte[] datadir);
 public static native void libpostal_teardown();
 
 public static native @Cast("bool") boolean libpostal_setup_parser();
 public static native @Cast("bool") boolean libpostal_setup_parser_datadir(@Cast("char*") BytePointer datadir);
-public static native @Cast("bool") boolean libpostal_setup_parser_datadir(@Cast("char*") String datadir);
+public static native @Cast("bool") boolean libpostal_setup_parser_datadir(@Cast("char*") ByteBuffer datadir);
+public static native @Cast("bool") boolean libpostal_setup_parser_datadir(@Cast("char*") byte[] datadir);
 public static native void libpostal_teardown_parser();
 
 public static native @Cast("bool") boolean libpostal_setup_language_classifier();
 public static native @Cast("bool") boolean libpostal_setup_language_classifier_datadir(@Cast("char*") BytePointer datadir);
-public static native @Cast("bool") boolean libpostal_setup_language_classifier_datadir(@Cast("char*") String datadir);
+public static native @Cast("bool") boolean libpostal_setup_language_classifier_datadir(@Cast("char*") ByteBuffer datadir);
+public static native @Cast("bool") boolean libpostal_setup_language_classifier_datadir(@Cast("char*") byte[] datadir);
 public static native void libpostal_teardown_language_classifier();
 
 // #ifdef __cplusplus
