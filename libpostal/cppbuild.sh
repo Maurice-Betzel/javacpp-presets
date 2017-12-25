@@ -42,7 +42,7 @@ case $PLATFORM in
     mkdir -p ../bin
     mkdir -p ../lib
     mkdir -p ../include
-    cp src/.libs/libpostal-1.dll ../bin
+    cp src/.libs/libpostal-1.dll ../bin/libpostal.dll
     cp libpostal.lib ../lib
     cp src/libpostal.h ../include
         ;;
