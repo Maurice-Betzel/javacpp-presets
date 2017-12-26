@@ -34,10 +34,10 @@ case $PLATFORM in
     cp -rf windows/* ./
     cwd=$(pwd)
     bash -lc "cd $cwd && autoreconf -fi --warning=no-portability"
-    #./configure --datadir=/c [...some dir with a few GB of space...]
-    ./configure --disable-data-download
-    make -j4
-    make install
+    #bash -lc "cd $cwd && ./configure --datadir=/c [...some dir with a few GB of space...]"
+    bash -lc "cd $cwd && ./configure --disable-data-download"
+    bash -lc "cd $cwd && make -j4"
+    bash -lc "cd $cwd && make install"
     lib.exe /def:libpostal.def /out:libpostal.lib /machine:x64
     mkdir -p ../bin
     mkdir -p ../lib
